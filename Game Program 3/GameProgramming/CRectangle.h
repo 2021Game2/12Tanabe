@@ -16,11 +16,21 @@ class CRectangle {
 public:
 	//列挙型の定義
 	enum ETag {
+		E0,
 		EBLOCK,			//ブロック
 		EPLAYERBULLET,	//プレイヤー弾
-		EPLAYER,
-		EENEMYBULLET,
-		EENEMY,
+		EPLAYER,        //プレイヤー
+		EENEMYBULLET,   //敵の弾
+		EKEYENEMYBULLET,//鍵持ちの敵の弾
+		EENEMY,         //敵
+		EITEM,          //アイテム
+		EINVISIBLEBLOCK,//敵だけ通れない壁
+		EKEYITEM,       //鍵
+		EKEYBLOCK,      //鍵で通れるようになる壁
+		EBULLETENEMY,   //弾を出す敵
+		EKEYENEMY,      //鍵持ちの敵
+		EBREAKABLEWALL, //壊せる壁
+		EATTACK,        //プレイヤーの攻撃
 	};
 	ETag mTag;	//列挙型の変数
 	//デフォルトコンストラクタ

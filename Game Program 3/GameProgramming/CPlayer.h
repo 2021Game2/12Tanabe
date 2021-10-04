@@ -5,15 +5,22 @@
 
 class CPlayer : public CRectangle {
 public:
+	bool mGameover;
+	bool mGameclear;
 	int mFx, mFy;
-	int FireCount;
+	//ƒWƒƒƒ“ƒv
 	int mJump;
 	int mVj;
+	int FireCount;
+	int mAniCnt;
+	int mLife;
+	int mMuteki;
 	CPlayer();
+	static CPlayer* spInstance;
 	void Update();
 	void Render();
-
-	void Collision(CRectangle *i, CRectangle *y);
+	bool CPlayer::Collision(CRectangle& r);
+	void Collision(CRectangle* i, CRectangle* y);
 };
 
 #endif

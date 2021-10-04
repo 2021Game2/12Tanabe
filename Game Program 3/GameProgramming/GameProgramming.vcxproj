@@ -84,23 +84,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CAttack.cpp" />
+    <ClCompile Include="CBreakableWall.cpp" />
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CEnemy.cpp" />
+    <ClCompile Include="CInvisibleBlock.cpp" />
     <ClCompile Include="CKey.cpp" />
+    <ClCompile Include="CKeyItem.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CRectangle.cpp" />
     <ClCompile Include="CSceneGame.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CSceneTitle.cpp" />
+    <ClCompile Include="CSearch.cpp" />
+    <ClCompile Include="CSearchPoint.cpp" />
     <ClCompile Include="CText.cpp" />
     <ClCompile Include="Update.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAttack.h" />
+    <ClInclude Include="CBreakableWall.h" />
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CEnemy.h" />
+    <ClInclude Include="CInvisibleBlock.h" />
     <ClInclude Include="CKey.h" />
+    <ClInclude Include="CKeyItem.h" />
     <ClInclude Include="CMap.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CRectangle.h" />
@@ -108,6 +116,8 @@
     <ClInclude Include="CSceneGame.h" />
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CSceneTitle.h" />
+    <ClInclude Include="CSearch.h" />
+    <ClInclude Include="CSearchPoint.h" />
     <ClInclude Include="CText.h" />
     <ClInclude Include="CTexture.h" />
     <ClInclude Include="Update.h" />
