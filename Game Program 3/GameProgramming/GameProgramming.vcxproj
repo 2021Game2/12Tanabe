@@ -86,9 +86,12 @@
     <ClCompile Include="CAttack.cpp" />
     <ClCompile Include="CBreakableWall.cpp" />
     <ClCompile Include="CBullet.cpp" />
+    <ClCompile Include="CBulletEnemy.cpp" />
     <ClCompile Include="CEnemy.cpp" />
     <ClCompile Include="CInvisibleBlock.cpp" />
+    <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CKey.cpp" />
+    <ClCompile Include="CKeyBlock.cpp" />
     <ClCompile Include="CKeyItem.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CRectangle.cpp" />
@@ -105,9 +108,12 @@
     <ClInclude Include="CAttack.h" />
     <ClInclude Include="CBreakableWall.h" />
     <ClInclude Include="CBullet.h" />
+    <ClInclude Include="CBulletEnemy.h" />
     <ClInclude Include="CEnemy.h" />
     <ClInclude Include="CInvisibleBlock.h" />
+    <ClInclude Include="CItem.h" />
     <ClInclude Include="CKey.h" />
+    <ClInclude Include="CKeyBlock.h" />
     <ClInclude Include="CKeyItem.h" />
     <ClInclude Include="CMap.h" />
     <ClInclude Include="CPlayer.h" />

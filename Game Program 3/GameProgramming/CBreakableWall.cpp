@@ -1,5 +1,6 @@
 #include "CBreakableWall.h"
 #include"CTexture.h"
+#include "CPlayer.h"
 
 extern CTexture Texture;
 
@@ -15,8 +16,17 @@ CBreakableWall::CBreakableWall()
 
 void CBreakableWall::Updata()
 {
+
+	if (mEnabled) {
+
+	}
+
 }
 
 void CBreakableWall::Render()
 {
+	if (mEnabled) {
+
+	}
 }
+

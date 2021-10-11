@@ -15,6 +15,7 @@ public:
 	int mAniCnt;
 	int mLife;
 	int mMuteki;
+	int mClearPoint;
 	CPlayer();
 	static CPlayer* spInstance;
 	void Update();

@@ -11,6 +11,7 @@ public:
 	int mFx;
 	int mFy;
 	CAttack();
+	void Collision(CRectangle* i, CRectangle* y);
 	void Update();
 	void Render();
 };
