@@ -31,6 +31,7 @@ public:
 		EKEYENEMY,      //鍵持ちの敵
 		EBREAKABLEWALL, //壊せる壁
 		EATTACK,        //プレイヤーの攻撃
+		EDAMAGEBLOCK    //ダメージを受ける壁
 	};
 	ETag mTag;	//列挙型の変数
 	//デフォルトコンストラクタ

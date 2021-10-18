@@ -25,7 +25,7 @@ CPlayer::CPlayer()
 	, mMuteki(0)
 	, mGameover(false)
 	, mGameclear(false)
-	, mClearPoint()
+	, mClearPoint(false)
 {
 	mTag = EPLAYER;
 	spInstance = this;
