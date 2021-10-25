@@ -11,6 +11,9 @@ public:
 		if (mEnabled) {
 			CRectangle::Render(Texture, 48, 95, 191, 144);
 		}
+		else{
+			CRectangle::Render(Texture, 48, 95, 47, 1);
+		}
 	}
 };
 

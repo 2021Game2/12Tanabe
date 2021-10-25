@@ -9,7 +9,7 @@
 
 
 //extern：他のソースファイルの外部変数にアクセスする宣言
-extern CTexture Texture;
+CTexture TexturePlayer;
 extern int CountEnemy;
 extern int CountItem;
 extern int CountKeyBlock;
@@ -29,6 +29,9 @@ CPlayer::CPlayer()
 {
 	mTag = EPLAYER;
 	spInstance = this;
+	if (TexturePlayer.mId == 0) {
+		
+	 }
 }
 
 void CPlayer::Update() {
@@ -124,21 +127,21 @@ void CPlayer::Render() {
 	if (mMuteki >= 0)
 		if (mAniCnt < ANICNT / 2) {
 			if (mFx >= 0) {
-				CRectangle::Render(Texture, 130, 162, 162, 130);
+				CRectangle::Render(TexturePlayer, 130, 162, 162, 130);
 			}
 			else
 			{
-				CRectangle::Render(Texture, 162, 130, 162, 130);
+				CRectangle::Render(TexturePlayer, 162, 130, 162, 130);
 			}
 		}
 		else
 		{
 			if (mFx >= 0) {
-				CRectangle::Render(Texture, 162, 194, 162, 130);
+				CRectangle::Render(TexturePlayer, 162, 194, 162, 130);
 			}
 			else
 			{
-				CRectangle::Render(Texture, 194, 162, 162, 130);
+				CRectangle::Render(TexturePlayer, 194, 162, 162, 130);
 			}
 		}
 }
