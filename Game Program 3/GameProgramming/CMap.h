@@ -11,10 +11,16 @@ public:
 		if (mEnabled) {
 			CRectangle::Render(Texture, 48, 95, 191, 144);
 		}
-		else{
+
+	}
+};
+
+class CMap0 : public CRectangle {
+public:
+	void Render() {
+		if (mEnabled) {
 			CRectangle::Render(Texture, 48, 95, 47, 1);
 		}
 	}
 };
-
 #endif

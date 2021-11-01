@@ -2,6 +2,8 @@
 #include "CKey.h"
 #include "CBullet.h"
 #include "CTexture.h"
+#include "CAttack.h"
+
 #define G  1
 #define VJ0 18
 #define ANICNT 30
@@ -30,7 +32,7 @@ CPlayer::CPlayer()
 	mTag = EPLAYER;
 	spInstance = this;
 	if (TexturePlayer.mId == 0) {
-		
+		TexturePlayer.Load("player1.tga");
 	 }
 }
 

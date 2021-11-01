@@ -58,15 +58,15 @@ void CSceneGame::Init() {
 				Map->h = 50;
 			}
 			else if (map[j][i] == 0) {
-				CMap* Map = new CMap();
+				CMap0* Map0 = new CMap0();
 				//ŽlŠpŒ`‚É’l‚ðÝ’è
 				//”wŒi
-				Map->mEnabled = true;
-				Map->x = i * 100 - 350;
-				Map->y = j * -100 + 250;
-				Map->w = 50;
-				Map->h = 50;
-				Map->mTag = CRectangle::E0;
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
 			}
 			else if (map[j][i] == 3) {
 				CMap* Map = new CMap();
@@ -77,10 +77,20 @@ void CSceneGame::Init() {
 				Map->w = 50;
 				Map->h = 50;
 				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//ŽlŠpŒ`‚É’l‚ðÝ’è
+				//”wŒi
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
 				CItem* Item = new CItem();
 				Item->x = i * 100 - 350;
 				Item->y = j * -100 + 250;
 				CountItem++;
+
 			}
 			else if (map[j][i] == 5) {
 				CMap* Map = new CMap();
@@ -91,6 +101,15 @@ void CSceneGame::Init() {
 				Map->w = 50;
 				Map->h = 50;
 				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//ŽlŠpŒ`‚É’l‚ðÝ’è
+				//”wŒi
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
 				CKeyItem* KeyItem = new CKeyItem();
 				KeyItem->x = i * 100 - 350;
 				KeyItem->y = j * -100 + 250;
@@ -105,6 +124,15 @@ void CSceneGame::Init() {
 				Map->w = 50;
 				Map->h = 50;
 				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//ŽlŠpŒ`‚É’l‚ðÝ’è
+				//”wŒi
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
 				CKeyBlock* KeyBlock = new CKeyBlock();
 				KeyBlock->x = i * 100 - 350;
 				KeyBlock->y = j * -100 + 250;
@@ -119,6 +147,15 @@ void CSceneGame::Init() {
 				Map->w = 50;
 				Map->h = 50;
 				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//ŽlŠpŒ`‚É’l‚ðÝ’è
+				//”wŒi
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
 				CInvisibleBlock* InvisibleBlock = new CInvisibleBlock();
 				InvisibleBlock->x = i * 100 - 350;
 				InvisibleBlock->y = j * -100 + 250;
@@ -133,6 +170,15 @@ void CSceneGame::Init() {
 				Map->w = 50;
 				Map->h = 50;
 				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//ŽlŠpŒ`‚É’l‚ðÝ’è
+				//”wŒi
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
 				CEnemy* Enemy = new CEnemy();
 				Enemy->x = i * 100 - 350;
 				Enemy->y = j * -100 + 250;
@@ -151,6 +197,15 @@ void CSceneGame::Init() {
 				Map->w = 50;
 				Map->h = 50;
 				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//ŽlŠpŒ`‚É’l‚ðÝ’è
+				//”wŒi
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
 				CBulletEnemy* BulletEnemy = new CBulletEnemy();
 				BulletEnemy->x = i * 100 - 350;
 				BulletEnemy->y = j * -100 + 250;
