@@ -5,20 +5,24 @@ CTexture TextureAttack;
 
 //デフォルトコンストラクタ
 CAttack::CAttack()
-	: mFx(0), mFy(0)
+	: mFx(0), mFy(0),mCount(30)
 {
 	mEnabled = false;
 	w = 10;	//幅設定
 	h = 10;	//高さ設定
 
 	if (TextureAttack.mId == 0) {
-		TextureAttack.Load("player1.tga");
+		TextureAttack.Load("effect.tga");
 	}
 }
 
 //更新処理
 void CAttack::Update() {
 	//有効な時
+	mCount--;
+	if (mCount < 0) {
+		mEnabled = false;
+	}
 	if (mEnabled) {
 
 	}

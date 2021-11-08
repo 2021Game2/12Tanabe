@@ -127,7 +127,7 @@ bool CEnemy::Collision(CRectangle& r) {
 			//mFy *= -1;
 			break;
 
-		case EPLAYERBULLET:
+		case EATTACK:
 			//プレイヤーの弾に当たると、無効にする
 			mEnabled = false;
 			Score += 200;

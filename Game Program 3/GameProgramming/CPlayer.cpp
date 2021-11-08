@@ -16,6 +16,7 @@ extern int CountEnemy;
 extern int CountItem;
 extern int CountKeyBlock;
 extern int CountKeyItem;
+int mLife = 3;
 
 CPlayer* CPlayer::spInstance = 0;
 CPlayer::CPlayer()
@@ -23,7 +24,6 @@ CPlayer::CPlayer()
 	, FireCount(0)
 	, mVj(0)
 	, mJump(0)
-	, mLife(3)
 	, mMuteki(0)
 	, mGameover(false)
 	, mGameclear(false)
@@ -88,17 +88,17 @@ void CPlayer::Update() {
 	}
 	//FireContが0で、かつ、スペースキーで弾発射
 	else if (CKey::Once(' ')) {
-		CBullet* Bullet = new CBullet();
+		CAttack* Attack = new CAttack();
 		//発射位置の設定
-		Bullet->x = x;
-		Bullet->y = y;
-		//移動の値を設定
-		Bullet->mFx = mFx * 5;
-		Bullet->mFy = mFy * 5;
+		Attack->x = x;
+		Attack->y = y;
+		////移動の値を設定
+		//Bullet->mFx = mFx * 5;
+		//Bullet->mFy = mFy * 5;
 		//有効にする
-		Bullet->mEnabled = true;
+		Attack->mEnabled = true;
 		//プレイヤーの弾を設定
-		Bullet->mTag = CRectangle::EPLAYERBULLET;
+		Attack->mTag = CRectangle::EATTACK;
 		FireCount = 10;
 	}
 	//ジャンプ可能か
@@ -111,6 +111,9 @@ void CPlayer::Update() {
 	y += mVj;
 	if (y - h < -300) {
 		mGameover = true;
+	}
+	else if (mMuteki >= 0) {
+		mGameover = false;
 	}
 	if (CountItem == 0) {
 		mGameclear = true;
@@ -126,26 +129,28 @@ void CPlayer::Render() {
 	mAniCnt++;
 	mAniCnt %= ANICNT;
 	//	CRectangle::Render(Texture, 146 - 16, 146 + 16, 146 + 16, 146 - 16);
-	if (mMuteki >= 0)
-		if (mAniCnt < ANICNT / 2) {
-			if (mFx >= 0) {
-				CRectangle::Render(TexturePlayer, 130, 162, 162, 130);
-			}
-			else
-			{
-				CRectangle::Render(TexturePlayer, 162, 130, 162, 130);
-			}
+	if (mMuteki % 20 > 10) {
+		return;
+	}
+	if (mAniCnt < ANICNT / 2) {
+		if (mFx >= 0) {
+			CRectangle::Render(TexturePlayer, 130, 162, 162, 130);
 		}
 		else
 		{
-			if (mFx >= 0) {
-				CRectangle::Render(TexturePlayer, 162, 194, 162, 130);
-			}
-			else
-			{
-				CRectangle::Render(TexturePlayer, 194, 162, 162, 130);
-			}
+			CRectangle::Render(TexturePlayer, 162, 130, 162, 130);
 		}
+	}
+	else
+	{
+		if (mFx >= 0) {
+			CRectangle::Render(TexturePlayer, 162, 194, 162, 130);
+		}
+		else
+		{
+			CRectangle::Render(TexturePlayer, 194, 162, 162, 130);
+		}
+	}
 }
 
 
@@ -179,7 +184,8 @@ void CPlayer::Collision(CRectangle* ri, CRectangle* ry) {
 				mGameover = true;
 			}
 			else if (mMuteki <= 0) {
-				mMuteki = 5 * 60;
+				mMuteki = 2 * 60;
+				mLife -= 1;
 			}
 
 		}
@@ -189,7 +195,13 @@ void CPlayer::Collision(CRectangle* ri, CRectangle* ry) {
 	{
 		int mx, my;
 		if (CRectangle::Collision(ry, &mx, &my)) {
-			mGameover = true;
+			if (mLife <= 0) {
+				mGameover = true;
+			}
+			else if (mMuteki <= 0) {
+				mMuteki = 2 * 60;
+				mLife -= 1;
+			}
 
 		}
 
@@ -199,7 +211,13 @@ void CPlayer::Collision(CRectangle* ri, CRectangle* ry) {
 	{
 		int mx, my;
 		if (CRectangle::Collision(ry, &mx, &my)) {
-			mGameover = true;
+			if (mLife <= 0) {
+				mGameover = true;
+			}
+			else if (mMuteki <= 0) {
+				mMuteki = 2 * 60;
+				mLife -= 1;
+			}
 
 		}
 
@@ -208,7 +226,13 @@ void CPlayer::Collision(CRectangle* ri, CRectangle* ry) {
 	{
 		int mx, my;
 		if (CRectangle::Collision(ry, &mx, &my)) {
-			mGameover = true;
+			if (mLife <= 0) {
+				mGameover = true;
+			}
+			else if (mMuteki <= 0) {
+				mMuteki = 2 * 60;
+				mLife -= 1;
+			}
 
 		}
 

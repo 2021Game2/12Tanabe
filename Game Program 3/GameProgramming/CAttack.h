@@ -10,6 +10,7 @@ class CAttack : public CRectangle {
 public:
 	int mFx;
 	int mFy;
+	int mCount;
 	CAttack();
 	void Collision(CRectangle* i, CRectangle* y);
 	void Update();
