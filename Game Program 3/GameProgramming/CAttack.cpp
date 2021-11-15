@@ -18,14 +18,13 @@ CAttack::CAttack()
 
 //XVˆ—
 void CAttack::Update() {
+
 	//—LŒø‚È
 	mCount--;
 	if (mCount < 0) {
 		mEnabled = false;
 	}
-	if (mEnabled) {
 
-	}
 }
 
 //•`‰æˆ—

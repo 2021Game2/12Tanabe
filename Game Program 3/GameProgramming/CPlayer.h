@@ -12,8 +12,9 @@ public:
 	int mJump;
 	int mVj;
 	int FireCount;
+	int SearchCount;
 	int mAniCnt;
-	int mLife;
+	/*int mLife;*/
 	int mMuteki;
 	int mClearPoint;
 	CPlayer();
