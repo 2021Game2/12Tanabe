@@ -34,6 +34,7 @@ public:
 		EDAMAGEBLOCK ,  //ダメージを受ける壁
 		ESEARCH,		//調べる
 		ESEARCHPOINT,   //調べるポイント
+		ECLEARITEM,		//クリアアイテム
 
 	};
 	ETag mTag;	//列挙型の変数

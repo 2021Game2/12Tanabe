@@ -12,6 +12,7 @@
 #include"CKeyItem.h"
 #include"CKeyBlock.h"
 #include"CBulletEnemy.h"
+#include"CClearItem.h"
 
 CItem Item();
 int Score = 0;
@@ -38,10 +39,10 @@ void CSceneGame::Init() {
 	int map[6][62] =
 	{
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 0, 1, 5, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, 4, 0, 3, 1, 1, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 3, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 1, 1, 1, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 4, 3, 3, 1, 1, 3, 3, 3, 0, 4, 0, 0, 0, 2, 1, 1, 1, 0, 3, 0, 3, 0, 3, 0, 0, 4, 5, 0, 0, 2, 6, 0, 1, 0, 1, 4, 0, 2, 1, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 0, 1, 5, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2, 4, 0, 3, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 0, 0, 0, 0, 3, 1, 1, 0, 0, 0, 0, 0, 3, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 1, 0, 3, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 0, 0, 3, 3, 1, 1, 1, 0, 0, 0, 3, 3, 1, 1, 3, 3, 3, 0, 4, 0, 0, 0, 2, 1, 1, 1, 0, 3, 0, 3, 0, 3, 0, 0, 4, 5, 0, 0, 2, 6, 0, 1, 0, 1, 4, 0, 2, 1, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 
@@ -69,98 +70,6 @@ void CSceneGame::Init() {
 				Map0->h = 50;
 				Map0->mTag = CRectangle::E0;
 			}
-			else if (map[j][i] == 3) {
-				CMap* Map = new CMap();
-				//四角形に値を設定
-				Map->mEnabled = true;
-				Map->x = i * 100 - 350;
-				Map->y = j * -100 + 250;
-				Map->w = 50;
-				Map->h = 50;
-				Map->mTag = CRectangle::E0;
-				CMap0* Map0 = new CMap0();
-				//四角形に値を設定
-				//背景
-				Map0->mEnabled = true;
-				Map0->x = i * 100 - 350;
-				Map0->y = j * -100 + 250;
-				Map0->w = 50;
-				Map0->h = 50;
-				Map0->mTag = CRectangle::E0;
-				CItem* Item = new CItem();
-				Item->x = i * 100 - 350;
-				Item->y = j * -100 + 250;
-				CountItem++;
-
-			}
-			else if (map[j][i] == 5) {
-				CMap* Map = new CMap();
-				//四角形に値を設定
-				Map->mEnabled = true;
-				Map->x = i * 100 - 350;
-				Map->y = j * -100 + 250;
-				Map->w = 50;
-				Map->h = 50;
-				Map->mTag = CRectangle::E0;
-				CMap0* Map0 = new CMap0();
-				//四角形に値を設定
-				//背景
-				Map0->mEnabled = true;
-				Map0->x = i * 100 - 350;
-				Map0->y = j * -100 + 250;
-				Map0->w = 50;
-				Map0->h = 50;
-				Map0->mTag = CRectangle::E0;
-				CKeyItem* KeyItem = new CKeyItem();
-				KeyItem->x = i * 100 - 350;
-				KeyItem->y = j * -100 + 250;
-				CountKeyItem++;
-			}
-			else if (map[j][i] == 6) {
-				CMap* Map = new CMap();
-				//四角形に値を設定
-				Map->mEnabled = true;
-				Map->x = i * 100 - 350;
-				Map->y = j * -100 + 250;
-				Map->w = 50;
-				Map->h = 50;
-				Map->mTag = CRectangle::E0;
-				CMap0* Map0 = new CMap0();
-				//四角形に値を設定
-				//背景
-				Map0->mEnabled = true;
-				Map0->x = i * 100 - 350;
-				Map0->y = j * -100 + 250;
-				Map0->w = 50;
-				Map0->h = 50;
-				Map0->mTag = CRectangle::E0;
-				CKeyBlock* KeyBlock = new CKeyBlock();
-				KeyBlock->x = i * 100 - 350;
-				KeyBlock->y = j * -100 + 250;
-				CountKeyBlock++;
-			}
-			else if (map[j][i] == 4) {
-				CMap* Map = new CMap();
-				//四角形に値を設定
-				Map->mEnabled = true;
-				Map->x = i * 100 - 350;
-				Map->y = j * -100 + 250;
-				Map->w = 50;
-				Map->h = 50;
-				Map->mTag = CRectangle::E0;
-				CMap0* Map0 = new CMap0();
-				//四角形に値を設定
-				//背景
-				Map0->mEnabled = true;
-				Map0->x = i * 100 - 350;
-				Map0->y = j * -100 + 250;
-				Map0->w = 50;
-				Map0->h = 50;
-				Map0->mTag = CRectangle::E0;
-				CInvisibleBlock* InvisibleBlock = new CInvisibleBlock();
-				InvisibleBlock->x = i * 100 - 350;
-				InvisibleBlock->y = j * -100 + 250;
-			}
 
 			else if (map[j][i] == 2) {
 				CMap* Map = new CMap();
@@ -187,8 +96,104 @@ void CSceneGame::Init() {
 				Enemy->mFx = 1;
 				Enemy->mFy = 0;
 				CountEnemy++;
+			}
+
+			else if (map[j][i] == 3) {
+				CMap* Map = new CMap();
+				//四角形に値を設定
+				Map->mEnabled = true;
+				Map->x = i * 100 - 350;
+				Map->y = j * -100 + 250;
+				Map->w = 50;
+				Map->h = 50;
+				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//四角形に値を設定
+				//背景
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
+				CItem* Item = new CItem();
+				Item->x = i * 100 - 350;
+				Item->y = j * -100 + 250;
+				CountItem++;
 
 			}
+
+			else if (map[j][i] == 4) {
+				CMap* Map = new CMap();
+				//四角形に値を設定
+				Map->mEnabled = true;
+				Map->x = i * 100 - 350;
+				Map->y = j * -100 + 250;
+				Map->w = 50;
+				Map->h = 50;
+				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//四角形に値を設定
+				//背景
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
+				CInvisibleBlock* InvisibleBlock = new CInvisibleBlock();
+				InvisibleBlock->x = i * 100 - 350;
+				InvisibleBlock->y = j * -100 + 250;
+			}
+
+			else if (map[j][i] == 5) {
+				CMap* Map = new CMap();
+				//四角形に値を設定
+				Map->mEnabled = true;
+				Map->x = i * 100 - 350;
+				Map->y = j * -100 + 250;
+				Map->w = 50;
+				Map->h = 50;
+				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//四角形に値を設定
+				//背景
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
+				CKeyItem* KeyItem = new CKeyItem();
+				KeyItem->x = i * 100 - 350;
+				KeyItem->y = j * -100 + 250;
+				CountKeyItem++;
+			}
+
+			else if (map[j][i] == 6) {
+				CMap* Map = new CMap();
+				//四角形に値を設定
+				Map->mEnabled = true;
+				Map->x = i * 100 - 350;
+				Map->y = j * -100 + 250;
+				Map->w = 50;
+				Map->h = 50;
+				Map->mTag = CRectangle::E0;
+				CMap0* Map0 = new CMap0();
+				//四角形に値を設定
+				//背景
+				Map0->mEnabled = true;
+				Map0->x = i * 100 - 350;
+				Map0->y = j * -100 + 250;
+				Map0->w = 50;
+				Map0->h = 50;
+				Map0->mTag = CRectangle::E0;
+				CKeyBlock* KeyBlock = new CKeyBlock();
+				KeyBlock->x = i * 100 - 350;
+				KeyBlock->y = j * -100 + 250;
+				CountKeyBlock++;
+			}
+
 			else if (map[j][i] == 7) {
 				CMap* Map = new CMap();
 				//四角形に値を設定
@@ -214,8 +219,31 @@ void CSceneGame::Init() {
 				BulletEnemy->mFx = 1;
 				BulletEnemy->mFy = 0;
 				CountEnemy++;
-
 			}
+
+			else if (map[j][i] == 8) {
+			CMap* Map = new CMap();
+			//四角形に値を設定
+			Map->mEnabled = true;
+			Map->x = i * 100 - 350;
+			Map->y = j * -100 + 250;
+			Map->w = 50;
+			Map->h = 50;
+			Map->mTag = CRectangle::E0;
+			CMap0* Map0 = new CMap0();
+			//四角形に値を設定
+			//背景
+			Map0->mEnabled = true;
+			Map0->x = i * 100 - 350;
+			Map0->y = j * -100 + 250;
+			Map0->w = 50;
+			Map0->h = 50;
+			Map0->mTag = CRectangle::E0;
+			CClearItem* ClearItem = new CClearItem();
+			ClearItem->x = i * 100 - 350;
+			ClearItem->y = j * -100 + 250;
+			}
+
 		}
 	}
 	//クラスのメンバ変数への代入

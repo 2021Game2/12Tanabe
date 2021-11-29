@@ -75,6 +75,9 @@
     <ClCompile Include="CBulletEnemy.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="CClearItem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Update.h">
@@ -141,6 +144,9 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="CBulletEnemy.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CClearItem.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>

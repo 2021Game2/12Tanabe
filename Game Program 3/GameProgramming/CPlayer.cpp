@@ -4,6 +4,8 @@
 #include "CTexture.h"
 #include "CAttack.h"
 #include "CSearch.h"
+#include "CPlayer.h"
+#include"CClearItem.h";
 
 #define G  1
 #define VJ0 18
@@ -15,19 +17,20 @@ extern int CountEnemy;
 extern int CountItem;
 extern int CountKeyBlock;
 extern int CountKeyItem;
+//extern int GetClearItem;
 int mLife = 3;
 
 CPlayer* CPlayer::spInstance = 0;
 CPlayer::CPlayer()
 	: mFx(1.0f), mFy(0.0f)
 	, FireCount(0)
-	, SearchCount(0)
 	, mVj(0)
 	, mJump(0)
 	, mMuteki(0)
 	, mGameover(false)
 	, mGameclear(false)
 	, mClearPoint(false)
+	//, SearchCount(0)
 {
 	mTag = EPLAYER;
 	spInstance = this;
@@ -118,6 +121,9 @@ void CPlayer::Update() {
 	if (CountItem == 0) {
 		mGameclear = true;
 	}
+	//if (GetClearItem >= 1) {
+	//	mGameclear = true;
+	//}
 
 }
 
