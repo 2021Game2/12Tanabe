@@ -59,6 +59,7 @@ void CPlayer::Update() {
 			x = -400 + w;
 		}
 	}
+
 	if (CKey::Push('D')) {
 		x += 3;
 		mFx = 1;
@@ -67,6 +68,7 @@ void CPlayer::Update() {
 			//x = 400 - w;
 		//}
 	}
+
 	if (CKey::Push('S')) {
 		y -= 3;
 		//mFx = 0;
@@ -87,8 +89,7 @@ void CPlayer::Update() {
 	//	SearchCount = 10;
 	//	}
 	//}
-	//スペースキーで弾発射
-	//0より大きいとき1減算する
+
 	if (FireCount > 0) {
 		FireCount--;
 	}
@@ -104,23 +105,28 @@ void CPlayer::Update() {
 		Attack->mTag = CRectangle::EATTACK;
 		FireCount = 10;
 	}
+
 	//ジャンプ可能か
 	if (mJump == 0 && CKey::Push('J')) {
 		mVj = VJ0;
 		mJump++;
 	}
+
 	//速度に重力加速度計算
 	mVj -= G;
 	y += mVj;
 	if (y - h < -300) {
 		mGameover = true;
 	}
+
 	else if (mMuteki >= 0) {
 		mGameover = false;
 	}
+
 	if (CountItem == 0) {
 		mGameclear = true;
 	}
+
 	//if (GetClearItem >= 1) {
 	//	mGameclear = true;
 	//}
