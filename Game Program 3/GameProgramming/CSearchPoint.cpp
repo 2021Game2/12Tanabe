@@ -35,6 +35,9 @@ void CSearchPoint::Update()
 
 void CSearchPoint::Render()
 {
+	if (mEnabled) {
+		CRectangle::Render(TextureSearchPoint, 225 - 1, 239 + 1, 15 + 1, 3 - 1);
+	}
 
 }
 void CSearchPoint::Collision(CRectangle* i, CRectangle* y)

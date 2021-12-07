@@ -87,7 +87,6 @@ void CPlayer::Update() {
 	//	Search->mEnabled = true;
 	//	Search->mTag = CRectangle::ESEARCH;
 	//	SearchCount = 10;
-	//	}
 	//}
 
 	if (FireCount > 0) {
@@ -111,6 +110,8 @@ void CPlayer::Update() {
 		mVj = VJ0;
 		mJump++;
 	}
+
+
 
 	//速度に重力加速度計算
 	mVj -= G;
