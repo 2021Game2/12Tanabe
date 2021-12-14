@@ -77,24 +77,25 @@ void CPlayer::Update() {
 			y = -300 + h;
 		}
 	}
-
-	//if (SearchCount > 0) {
-	//	SearchCount--;
-	//}
-	//else if (SearchCount == 0 && CKey::Once('W')) {
-	//	CSearch* Search = new CSearch();
-	//	Search->y = y;
-	//	Search->mEnabled = true;
-	//	Search->mTag = CRectangle::ESEARCH;
-	//	SearchCount = 10;
-	//}
+	
+	if (SearchCount > 0) {
+		SearchCount--;
+	}
+	else if (SearchCount == 0 && CKey::Once('W')) {
+		CSearch * Search = new CSearch();
+		Search->x = x + (w + 10) * mFx;
+		Search->y = y;
+		Search->mEnabled = true;
+		Search->mTag = CRectangle::ESEARCH;
+		SearchCount = 10;
+	}
 
 	if (FireCount > 0) {
 		FireCount--;
 	}
 	//FireContが0で、かつ、スペースキーで弾発射
 	else if (FireCount==0 && CKey::Once(' ')) {
-		CAttack* Attack = new CAttack();
+		CAttack * Attack = new CAttack();
 		//発射位置の設定
 		Attack->x = x + (w + 10) * mFx;
 		Attack->y = y;

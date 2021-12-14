@@ -9,6 +9,7 @@ CSearch::CSearch()
 	mEnabled = false;
 	w = 10;	//•İ’è
 	h = 10;	//‚‚³İ’è
+	mTag = ESEARCH;
 
 	if (TextureSearch.mId == 0) {
 		TextureSearch.Load("effect.tga");
