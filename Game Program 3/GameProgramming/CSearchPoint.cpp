@@ -10,11 +10,11 @@ CSearchPoint::CSearchPoint()
 	, mFy(0.0f)
 {
 	mTag = ESEARCHPOINT;
-	w = 50;
-	h = 50;
+	w = 25;
+	h = 25;
 
 	if (TextureSearchPoint.mId == 0) {
-		TextureSearchPoint.Load("effect.tga");
+		TextureSearchPoint.Load("SearchPoint.tga");
 	}
 }
 
@@ -36,7 +36,7 @@ void CSearchPoint::Update()
 void CSearchPoint::Render()
 {
 	if (mEnabled) {
-		CRectangle::Render(TextureSearchPoint, 225 - 1, 239 + 1, 15 + 1, 3 - 1);
+		CRectangle::Render(TextureSearchPoint, 64, 96, 32, 0);
 	}
 
 }

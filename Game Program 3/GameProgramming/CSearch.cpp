@@ -7,8 +7,8 @@ CSearch::CSearch()
 	: mFx(0), mFy(0), mCount(30)
 {
 	mEnabled = false;
-	w = 10;	//幅設定
-	h = 10;	//高さ設定
+	w = 15;	//幅設定
+	h = 20;	//高さ設定
 	mTag = ESEARCH;
 
 	if (TextureSearch.mId == 0) {
@@ -31,7 +31,7 @@ void CSearch::Render()
 	//有効な時
 	if (mEnabled) {
 		//親の描画メソッドを呼ぶ
-		CRectangle::Render(TextureSearch, 192, 207, 112, 97);
+		CRectangle::Render(TextureSearch, 0, 32, 32, 0);
 	}
 }
 

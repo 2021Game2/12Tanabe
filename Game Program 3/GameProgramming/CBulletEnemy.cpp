@@ -8,6 +8,7 @@
 extern CTexture Texture;
 extern int Score;
 extern int CountEnemy;
+CTexture TextureBulletEnemy;
 
 CBulletEnemy::CBulletEnemy()
 	: mFx(1.0f)
@@ -17,6 +18,9 @@ CBulletEnemy::CBulletEnemy()
 	mTag = EBULLETENEMY;
 	w = 25;
 	h = 25;
+	if (TextureBulletEnemy.mId == 0) {
+		TextureBulletEnemy.Load("BulletEnemy.tga");
+	}
 }
 
 
@@ -41,7 +45,7 @@ void CBulletEnemy::Update() {
 	}
 	else {
 		//’e‚ð4”­Žl•û‚Ö”­ŽË‚·‚é
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 2; i++) {
 			CBullet* EBullet = new CBullet();
 			//À•WÝ’è
 			EBullet->x = x;
@@ -53,7 +57,7 @@ void CBulletEnemy::Update() {
 			EBullet->mEnabled = true;
 			EBullet->mTag = EENEMYBULLET;
 		}
-		mFireCount = 100;
+		mFireCount = 200;
 	}
 	mFy = -1;
 	x += mFx;
@@ -149,21 +153,21 @@ void CBulletEnemy::Render() {
 		mAniCnt %= ANICNT;
 		if (mAniCnt < ANICNT / 2) {
 			if (mFx >= 0) {
-				CRectangle::Render(Texture, 130, 162, 226, 194);
+				CRectangle::Render(TextureBulletEnemy, 32, 64, 96, 64);
 			}
 			else
 			{
-				CRectangle::Render(Texture, 162, 130, 226, 194);
+				CRectangle::Render(TextureBulletEnemy, 64, 32, 96, 64);
 			}
 		}
 		else
 		{
 			if (mFx >= 0) {
-				CRectangle::Render(Texture, 162, 194, 226, 194);
+				CRectangle::Render(TextureBulletEnemy, 64, 96, 96, 64);
 			}
 			else
 			{
-				CRectangle::Render(Texture, 194, 162, 226, 194);
+				CRectangle::Render(TextureBulletEnemy, 96, 64, 96, 64);
 			}
 		}
 	}

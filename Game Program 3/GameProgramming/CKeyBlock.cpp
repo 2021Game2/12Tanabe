@@ -2,7 +2,7 @@
 #include"CTexture.h"
 #include"CPlayer.h"
 
-extern CTexture Texture;
+CTexture TextureKeyBlock;
 extern int Score;
 extern int CountKeyItem;
 extern int KeyItem;
@@ -15,6 +15,10 @@ CKeyBlock::CKeyBlock()
 	mTag = EKEYBLOCK;
 	w = 50;
 	h = 50;
+
+	if (TextureKeyBlock.mId == 0) {
+		TextureKeyBlock.Load("KeyBlock.tga");
+	}
 }
 void CKeyBlock::Update() {
 	if (!mEnabled) return;
@@ -27,7 +31,7 @@ void CKeyBlock::Update() {
 }
 void CKeyBlock::Render() {
 	if (mEnabled) {
-		CRectangle::Render(Texture, 226 - 1, 239 + 1, 15 + 1, 33 - 1);
+		CRectangle::Render(TextureKeyBlock, 128, 192, 64, 0);
 	}
 }
 bool CKeyBlock::Collision(CRectangle& r) {

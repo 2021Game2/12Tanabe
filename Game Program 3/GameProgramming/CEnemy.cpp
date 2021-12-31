@@ -8,6 +8,7 @@
 extern CTexture Texture;
 extern int Score;
 extern int CountEnemy;
+CTexture TextureEnemy;
 
 CEnemy::CEnemy()
 	: mFx(1.0f)
@@ -17,6 +18,9 @@ CEnemy::CEnemy()
 	mTag = EENEMY;
 	w = 25;
 	h = 25;
+	if (TextureEnemy.mId == 0) {
+		TextureEnemy.Load("Enemy.tga");
+	}
 }
 
 
@@ -149,21 +153,21 @@ void CEnemy::Render() {
 		mAniCnt %= ANICNT;
 		if (mAniCnt < ANICNT / 2) {
 			if (mFx >= 0) {
-				CRectangle::Render(Texture, 130, 162, 194, 162);
+				CRectangle::Render(TextureEnemy, 32, 64, 96, 64);
 			}
 			else
 			{
-				CRectangle::Render(Texture, 162, 130, 194, 162);
+				CRectangle::Render(TextureEnemy, 64, 32, 96, 64);
 			}
 		}
 		else
 		{
 			if (mFx >= 0) {
-				CRectangle::Render(Texture, 162, 194, 194, 162);
+				CRectangle::Render(TextureEnemy, 64, 96, 96, 64);
 			}
 			else
 			{
-				CRectangle::Render(Texture, 194, 162, 194, 162);
+				CRectangle::Render(TextureEnemy, 96, 64, 96, 64);
 			}
 		}
 	}

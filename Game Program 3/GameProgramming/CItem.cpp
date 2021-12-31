@@ -2,7 +2,7 @@
 #include"CTexture.h"
 #include"CPlayer.h"
 
-extern CTexture Texture;
+CTexture TextureItem;
 extern int Score;
 extern int CountItem;
 
@@ -11,8 +11,12 @@ CItem::CItem()
 	, mFy(0.0f)
 {
 	mTag = EITEM;
-	w = 20;
-	h = 20;
+	w = 25;
+	h = 25;
+
+	if (TextureItem.mId == 0) {
+		TextureItem.Load("Item.tga");
+	}
 }
 void CItem::Update() {
 	if (!mEnabled) return;
@@ -25,7 +29,7 @@ void CItem::Update() {
 }
 void CItem::Render() {
 	if (mEnabled) {
-		CRectangle::Render(Texture, 225 - 1, 239 + 1, 15 + 1, 3 - 1);
+		CRectangle::Render(TextureItem, 64, 96, 126 , 96 );
 	}
 }
 bool CItem::Collision(CRectangle& r) {

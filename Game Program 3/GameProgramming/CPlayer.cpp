@@ -112,11 +112,10 @@ void CPlayer::Update() {
 		mJump++;
 	}
 
-
-
 	//速度に重力加速度計算
 	mVj -= G;
 	y += mVj;
+
 	if (y - h < -300) {
 		mGameover = true;
 	}
@@ -148,21 +147,21 @@ void CPlayer::Render() {
 	}
 	if (mAniCnt < ANICNT / 2) {
 		if (mFx >= 0) {
-			CRectangle::Render(TexturePlayer, 130, 162, 162, 130);
+			CRectangle::Render(TexturePlayer, 32, 64, 96, 64);
 		}
 		else
 		{
-			CRectangle::Render(TexturePlayer, 162, 130, 162, 130);
+			CRectangle::Render(TexturePlayer, 64, 32, 96, 64);
 		}
 	}
 	else
 	{
 		if (mFx >= 0) {
-			CRectangle::Render(TexturePlayer, 162, 194, 162, 130);
+			CRectangle::Render(TexturePlayer, 64, 96, 96, 64);
 		}
 		else
 		{
-			CRectangle::Render(TexturePlayer, 194, 162, 162, 130);
+			CRectangle::Render(TexturePlayer, 96, 64, 96, 64);
 		}
 	}
 }
