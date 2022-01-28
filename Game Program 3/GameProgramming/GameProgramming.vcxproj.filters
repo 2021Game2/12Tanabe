@@ -78,6 +78,9 @@
     <ClCompile Include="CClearItem.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="CReStart.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Update.h">
@@ -147,6 +150,9 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="CClearItem.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CReStart.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>

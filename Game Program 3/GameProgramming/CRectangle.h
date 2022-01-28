@@ -35,6 +35,7 @@ public:
 		ESEARCH,		//調べる
 		ESEARCHPOINT,   //調べるポイント
 		ECLEARITEM,		//クリアアイテム
+		ERESTART,		//リスポーン地点設定
 
 	};
 	ETag mTag;	//列挙型の変数
